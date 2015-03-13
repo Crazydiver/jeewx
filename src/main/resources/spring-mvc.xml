@@ -124,9 +124,9 @@
 					    <value>zpController.do?iscontinue</value>
 					    <value>zpController.do?saveZpPrize</value>
 					    <value>zpController.do?getZpPize</value>
-					    <value>zpController.do?saverecord</value>
-					    <value>zpController.do?ggl_new</value>
-					    <value>zpController.do?ggl</value>
+					    <value>zpController.do?saveRecord</value>
+					    <value>zpController.do?goGglNew</value>
+					    <value>zpController.do?doGgl</value>
 					    <value>zpController.do?zp</value>
 					    <value>zpController.do?goZhuanpan</value>
 					    <value>weixinCmsStyleController.do?upload</value>

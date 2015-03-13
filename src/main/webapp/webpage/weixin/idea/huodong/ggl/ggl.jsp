@@ -30,7 +30,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    }
 	    var isfirst = 0;
 	    var iscontinue = 0 ;
-
+	    var accountid = "${accountid}";
+	    
 		$("#wScratchPad2").wScratchPad({
              color: 'grey',//覆盖的刮刮层的颜色
              image: picPath, //刮奖结果图片
@@ -42,6 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		           		url:"zpController.do?doGgl",
 		           		method:"POST",
 		           		dataType:"JSON",
+		           		data:{"accountid":accountid},
 		           		async:false,
 		           		success:function(data){
 		           		   if(!data.success){
@@ -60,14 +62,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 	this.clear();
                 	if(isfirst==0){
                 	  if(prize=='1'){
+                		  type="一等奖"
 		            	message = "恭喜你获得一等奖！";
 		            	$("#result").slideToggle(500);
 	                    $("#card").slideUp(500);
 		              }else if(prize=='2'){
+		            	  type="二等奖"
 		            	message = "恭喜你获得二等奖！";
 		            	$("#result").slideToggle(500);
 	                    $("#card").slideUp(500);
 	                  }else if(prize=='3'){
+	                	  type="三等奖"
 		            	message = "恭喜你获得三等奖！";
 		            	$("#result").slideToggle(500);
 	                    $("#card").slideUp(500);
@@ -75,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		            	message = "再接再厉！";
 		            	alert(message);
 		              }
-                	  
+                	  $("#prizetype").html(type);
                 	}
                 	
                 	isfirst=1;
@@ -99,12 +104,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				alert("请输入正确手机号码");
 				return
 			}
+			var accountid = "${accountid}";
 			
 			$.ajax({
            		url:"zpController.do?saveRecord",
            		method:"POST",
            		dataType:"JSON",
-           		data:{mobile:tel},
+           		data:{"mobile":tel,"accountid":accountid},
            		success:function(data){
            		   if(data.success){
            		   		alert("提交成功，谢谢参与！");

@@ -39,8 +39,6 @@ var loadingObj = new loading(document.getElementById('loading'),{radius:20,circl
 <div class="Detail">
             <a class="ui-link" href="#" id="opendialog" style="display: none;" data-rel="dialog"></a>
 <p>你中了：<span class="red" id="prizetype">一等奖</span></p>
-<p>你的兑奖SN码：<span class="red" id="sncode"></span></p>
-<p class="red">本次兑奖码已经关联你的微信号，你可向公众号发送 兑奖 进行查询!</p>
                
 <p>
 <input name="" class="px" id="tel" type="text" placeholder="输入您的手机号码">
